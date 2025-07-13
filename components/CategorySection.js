@@ -92,48 +92,48 @@ const CategorySection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid lg:grid-cols-3 gap-8"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
         >
           {categories.map((category) => (
             <motion.div
               key={category.id}
               variants={itemVariants}
-              className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+              className="bg-white rounded-2xl lg:rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
             >
               {/* Category Header */}
-              <div className={`p-8 rounded-t-3xl bg-gradient-to-br from-${category.color}-100 to-${category.color}-200`}>
+              <div className={`p-6 lg:p-8 rounded-t-2xl lg:rounded-t-3xl bg-gradient-to-br from-${category.color}-100 to-${category.color}-200`}>
                 <div className="text-center">
-                  <div className="text-4xl mb-4">{category.icon}</div>
-                  <h3 className="text-2xl font-playfair font-bold text-chocolate mb-2">
+                  <div className="text-3xl lg:text-4xl mb-4">{category.icon}</div>
+                  <h3 className="text-xl lg:text-2xl font-playfair font-bold text-chocolate mb-2">
                     {category.name}
                   </h3>
-                  <p className="text-chocolate/70">{category.description}</p>
+                  <p className="text-sm lg:text-base text-chocolate/70">{category.description}</p>
                 </div>
               </div>
 
               {/* Category Items */}
-              <div className="p-6">
-                <div className="space-y-4">
+              <div className="p-4 lg:p-6">
+                <div className="space-y-3 lg:space-y-4">
                   {category.items.map((item, index) => (
                     <motion.div
                       key={index}
                       whileHover={{ scale: 1.02 }}
-                      className="flex items-center justify-between p-4 bg-gray-50 rounded-xl hover:bg-white hover:shadow-md transition-all duration-300"
+                      className="flex items-center justify-between p-3 lg:p-4 bg-gray-50 rounded-lg lg:rounded-xl hover:bg-white hover:shadow-md transition-all duration-300"
                     >
-                      <div className="flex items-center space-x-3">
-                        <div className="text-2xl">{item.image}</div>
+                      <div className="flex items-center space-x-2 lg:space-x-3">
+                        <div className="text-xl lg:text-2xl">{item.image}</div>
                         <div>
-                          <h4 className="font-semibold text-chocolate">{item.name}</h4>
+                          <h4 className="font-semibold text-chocolate text-sm lg:text-base">{item.name}</h4>
                           <div className="flex items-center space-x-1">
-                            <FiStar className="text-yellow-400 text-sm" />
-                            <span className="text-sm text-chocolate/60">{item.rating}</span>
+                            <FiStar className="text-yellow-400 text-xs lg:text-sm" />
+                            <span className="text-xs lg:text-sm text-chocolate/60">{item.rating}</span>
                           </div>
                         </div>
                       </div>
-                      <div className="flex items-center space-x-3">
-                        <span className="font-bold text-primary-600">{item.price}</span>
-                        <button className="p-2 bg-primary-100 hover:bg-primary-200 rounded-full transition-colors duration-300">
-                          <FiShoppingCart className="text-primary-600" />
+                      <div className="flex items-center space-x-2 lg:space-x-3">
+                        <span className="font-bold text-primary-600 text-sm lg:text-base">{item.price}</span>
+                        <button className="p-1.5 lg:p-2 bg-primary-100 hover:bg-primary-200 rounded-full transition-colors duration-300">
+                          <FiShoppingCart className="text-primary-600 text-sm lg:text-base" />
                         </button>
                       </div>
                     </motion.div>

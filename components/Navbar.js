@@ -26,23 +26,23 @@ const Navbar = () => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
     }`}>
-      <div className="container-custom">
-        <div className="flex items-center justify-between h-20">
+      <div className="container-custom px-4">
+        <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <FiCoffee className="text-3xl text-primary-500 animate-bounce-gentle" />
-            <span className="text-2xl font-playfair font-bold text-chocolate">
+            <FiCoffee className="text-2xl md:text-3xl text-primary-500 animate-bounce-gentle" />
+            <span className="text-lg md:text-2xl font-playfair font-bold text-chocolate">
               Sweet Delights
             </span>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-chocolate hover:text-primary-500 font-medium transition-colors duration-300 relative group"
+                className="text-chocolate hover:text-primary-500 font-medium transition-colors duration-300 relative group text-sm lg:text-base"
               >
                 {item.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 group-hover:w-full"></span>
@@ -52,7 +52,7 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center space-x-4">
-            <button className="btn-primary flex items-center space-x-2">
+            <button className="btn-primary flex items-center space-x-2 text-sm lg:text-base">
               <FiShoppingCart className="text-lg" />
               <span>Order Now</span>
             </button>
@@ -61,9 +61,9 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-chocolate hover:text-primary-500 transition-colors duration-300"
+            className="md:hidden text-chocolate hover:text-primary-500 transition-colors duration-300 p-2"
           >
-            {isOpen ? <FiX className="text-2xl" /> : <FiMenu className="text-2xl" />}
+            {isOpen ? <FiX className="text-xl" /> : <FiMenu className="text-xl" />}
           </button>
         </div>
 
@@ -71,19 +71,19 @@ const Navbar = () => {
         <div className={`md:hidden transition-all duration-300 ease-in-out ${
           isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         } overflow-hidden`}>
-          <div className="py-4 space-y-4 bg-white/95 backdrop-blur-md rounded-lg mt-2 shadow-lg">
+          <div className="py-4 space-y-4 bg-white/95 backdrop-blur-md rounded-lg mt-2 shadow-lg mx-4">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className="block px-4 py-2 text-chocolate hover:text-primary-500 hover:bg-primary-50 rounded-md transition-all duration-300"
+                className="block px-4 py-3 text-chocolate hover:text-primary-500 hover:bg-primary-50 rounded-md transition-all duration-300 text-sm"
               >
                 {item.name}
               </a>
             ))}
             <div className="px-4 pt-4">
-              <button className="btn-primary w-full flex items-center justify-center space-x-2">
+              <button className="btn-primary w-full flex items-center justify-center space-x-2 text-sm">
                 <FiShoppingCart className="text-lg" />
                 <span>Order Now</span>
               </button>

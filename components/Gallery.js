@@ -143,18 +143,18 @@ const Gallery = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6"
         >
           {galleryItems.map((item) => (
             <motion.div
               key={item.id}
               variants={itemVariants}
               whileHover={{ scale: 1.05, y: -10 }}
-              className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
+              className="group relative bg-white rounded-xl lg:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
             >
               {/* Image Container */}
-              <div className="relative h-64 bg-gradient-to-br from-primary-100 to-secondary-100 flex items-center justify-center">
-                <div className="text-6xl group-hover:scale-110 transition-transform duration-500">
+              <div className="relative h-48 sm:h-56 lg:h-64 bg-gradient-to-br from-primary-100 to-secondary-100 flex items-center justify-center">
+                <div className="text-4xl sm:text-5xl lg:text-6xl group-hover:scale-110 transition-transform duration-500">
                   {item.image}
                 </div>
                 
@@ -182,16 +182,16 @@ const Gallery = () => {
               </div>
 
               {/* Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-playfair font-bold text-chocolate mb-2 group-hover:text-primary-600 transition-colors duration-300">
+              <div className="p-4 lg:p-6">
+                <h3 className="text-lg lg:text-xl font-playfair font-bold text-chocolate mb-2 group-hover:text-primary-600 transition-colors duration-300">
                   {item.title}
                 </h3>
-                <p className="text-chocolate/70 text-sm mb-4">
+                <p className="text-chocolate/70 text-xs lg:text-sm mb-3 lg:mb-4">
                   {item.description}
                 </p>
                 
                 {/* Stats */}
-                <div className="flex items-center justify-between text-sm text-chocolate/60">
+                <div className="flex items-center justify-between text-xs lg:text-sm text-chocolate/60">
                   <div className="flex items-center space-x-1">
                     <FiHeart className="text-red-400" />
                     <span>{item.likes}</span>
