@@ -26,8 +26,8 @@ const Navbar = () => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
     }`}>
-      <div className="container-custom px-4">
-        <div className="flex items-center justify-between h-16 md:h-20">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 md:h-20 max-w-7xl mx-auto">
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <FiCoffee className="text-2xl md:text-3xl text-primary-500 animate-bounce-gentle" />
@@ -61,9 +61,9 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-chocolate hover:text-primary-500 transition-colors duration-300 p-2"
+            className="md:hidden text-chocolate hover:text-primary-500 transition-colors duration-300 p-1"
           >
-            {isOpen ? <FiX className="text-xl" /> : <FiMenu className="text-xl" />}
+            {isOpen ? <FiX className="text-lg" /> : <FiMenu className="text-lg" />}
           </button>
         </div>
 
@@ -71,7 +71,7 @@ const Navbar = () => {
         <div className={`md:hidden transition-all duration-300 ease-in-out ${
           isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         } overflow-hidden`}>
-          <div className="py-4 space-y-4 bg-white/95 backdrop-blur-md rounded-lg mt-2 shadow-lg mx-4">
+          <div className="py-4 space-y-4 bg-white/95 backdrop-blur-md rounded-lg mt-2 shadow-lg mx-4 max-w-7xl mx-auto">
             {navItems.map((item) => (
               <a
                 key={item.name}
